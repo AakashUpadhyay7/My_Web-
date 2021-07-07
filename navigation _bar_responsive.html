@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Fully responsive navigation bar</title>
+    <style>
+
+        *{
+            
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .nav{
+            background:#1d4052;
+            color:#fff;
+            padding:23px;
+            
+        }
+
+        .nav img{
+            padding:14px;
+            height:45px;
+            float:left;
+            margin:0px;
+        }
+
+        span{
+            margin:0 20px;
+            font-size:30px;
+            cursor:pointer;
+        
+            display:none;
+            
+        }
+
+        .menu-right{
+            text-align:right;  /*to display right*/
+
+        }
+        .nav ul li{
+            display:inline-block;
+            margin:20px;
+            list-style:none;
+        }
+
+        .nav ul li a{
+            position:relative;
+            color:white;
+            font-size: 18px;
+        }
+        
+        .nav ul li a:hover{
+            color:red;
+        }
+
+        .nav ul li a::before{
+            content:" ";
+            position:absolute;
+            left:0;
+            bottom:-3px;
+            width:100%;
+            height:2.4px;
+            transform-origin: left;
+            margin:none;
+            
+            transform: scaleX(0);
+            background:yellow;
+            transition:transform .4s linear;
+
+        }
+
+        .nav ul li a:hover::before{
+            transform-origin: left;
+            transform: scaleX(1);
+
+        }
+
+        h1{
+            text-align: center;
+            padding:8px;
+            overflow:hidden;
+            width:0ch;
+            animation:animation 6s  linear infinite;
+            animation-delay:.6s;
+            animation-direction:initial;           
+        }
+
+
+        @keyframes animation
+        {
+            
+            0%,10%,100%
+            {
+                
+                width:0;
+            }
+            70%,90%{
+                
+                width:100%
+            }
+        }
+
+        #main{
+            background-color: rgb(255, 109, 5);
+            
+        }
+
+        #main1{
+            text-align: center;
+            background-image: url("back5.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding:4px 4px;
+
+        }
+
+        h2{
+            width:0ch;
+            overflow: hidden;
+            white-space: nowrap;
+            animation:text 6s  linear infinite;
+            animation-delay:4.4s;
+            border-right:0px solid white;
+
+        }
+        @keyframes text {
+            0%{
+                width: 0ch;
+            }
+            50%{
+                width:17ch;
+            }
+            
+        }
+
+        #dev{
+            display:flex;
+            flex-direction: column;
+            align-items:center;
+            text-align: center;
+            justify-content: center;
+            background-color: purple;
+        }
+        #dev p{
+            font-size: xx-large;
+            color:white;
+        }
+        #dev h3{
+            font-size: xx-large;
+            color:rgb(251, 255, 0);
+        }
+
+        
+    /*    #main1 h2::after{
+            content:" ";
+            position:absolute;
+            left:0;
+            height:100%;
+            width:0;
+            background:chartreuse;
+            overflow: hidden;
+            animation: typing 1.5s steps(11) infinite;
+        }
+
+        @keyframes typing{
+            
+            100%{
+                
+                width:100%;
+               
+            }
+
+        }*/
+
+
+
+
+
+
+        @media  screen and (max-width:600px){
+
+            span{
+                display: block;
+            }
+
+            .nav img{
+                padding-bottom:29%;
+                margin-bottom: 44px;
+
+            }
+
+            #menu li{
+                display:block;
+            }
+
+            #menu{
+                display:none;
+            }
+            .nav ul li{
+                padding-right: 4px;
+            }
+
+            .nav ul li:hover{
+                
+                border-right:2px solid red;
+             }   
+
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+
+        <img src="logoweb4.jpeg">
+        <div class="menu-right">
+            <span  onclick="my()">&#x2630</span>
+            <ul id="menu">
+                <li><a href="#" id="act">Home</a></li>
+                <li><a href="#">Dreams</a></li>
+                <li><a href="logoweb.2.jpeg">Carrer</a></li>
+                <li><a href="#" >Internship</a></li>
+                <li><a href="resumecss.pdf" download="download">Resume</a></li>
+            </ul>
+        </div>
+
+    </div>
+   
+
+        <h1 data-text="Welcome... " id="main">          Welcome...  </h1>
+    <div id="main1">
+        <h2>I welcome you all ....</h2>
+
+    </div>
+    <div id="dev">
+        <p>This site is under construction...</p>
+        <h3>
+            So don't trust me
+        </h3>
+    </div>
+        
+        
+   
+    <script>
+        function my(){
+
+            let x = document.getElementById("menu");
+            
+            if(x.style.display == "block"){
+
+                x.style.display="none";
+            }
+            
+            else{
+                x.style.display="block";
+            }
+
+        }
+    </script>
+</body>
+</html>
