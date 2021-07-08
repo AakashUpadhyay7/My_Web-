@@ -118,10 +118,12 @@
         }
 
         h2{
+            
+            color:rgb(57, 112, 1);
             width:0ch;
             overflow: hidden;
             white-space: nowrap;
-            animation:text 6s  linear infinite;
+            animation:text 12s  linear infinite;
             animation-delay:4.4s;
             border-right:0px solid white;
 
@@ -130,8 +132,11 @@
             0%{
                 width: 0ch;
             }
-            50%{
-                width:17ch;
+            /*50%{
+                width:100%;
+            }*/
+            100%{
+                width:100%;
             }
             
         }
@@ -287,10 +292,13 @@
             font-size:x-small;
              }
 
+            #main1 h2{
+                display:block;
+                font-size: xx-small;
+            }
+
         }
 
-            
-        }
     </style>
 </head>
 <body>
@@ -300,10 +308,9 @@
         <div class="menu-right">
             <span  onclick="my()">&#x2630</span>
             <ul id="menu">
-                <li><a href="#" id="act">Home</a></li>
-                <li><a href="#">Dreams</a></li>
-                <li><a href="logoweb.2.jpeg">Carrer</a></li>
-                <li><a href="#" >Internship</a></li>
+                <li><a href="index.html" id="act">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="Intern.html" >Internship</a></li>
                 <li><a href="resumecss.pdf" download="download">Resume</a></li>
             </ul>
         </div>
@@ -313,7 +320,7 @@
 
         <h1 data-text="Welcome... " id="main">          Welcome...  </h1>
     <div id="main1">
-        <h2>I welcome you all ....</h2>
+        <h2>Man is made by his belief. As he belives, so he becomes....-Bhagvad Gita</h2>
 
     </div>
 
@@ -368,7 +375,7 @@
            let a= alert("Sorry your form cannot be submitted as backend developnment is still pending");
 
 
-}
+        }
     </script>
 </body>
 </html>
