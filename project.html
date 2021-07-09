@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Fully responsive navigation bar</title>
+    <style>
+
+        *{
+            
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .nav{
+            background:#1d4052;
+            color:#fff;
+            padding:23px;
+            
+        }
+
+        .nav img{
+            padding:14px;
+            height:32px;
+            float:left;
+            margin:0px;
+        }
+
+        span{
+            margin:0 20px;
+            font-size:30px;
+            cursor:pointer;
+        
+            display:none;
+            
+        }
+
+        .menu-right{
+            text-align:right;  /*to display right*/
+
+        }
+        .nav ul li{
+            display:inline-block;
+            margin:20px;
+            list-style:none;
+        }
+
+        .nav ul li a{
+            position:relative;
+            color:white;
+            font-size: 18px;
+        }
+        
+        .nav ul li a:hover{
+            color:red;
+        }
+
+        .nav ul li a::before{
+            content:" ";
+            position:absolute;
+            left:0;
+            bottom:-3px;
+            width:100%;
+            height:2.4px;
+            transform-origin: left;
+            margin:none;
+            
+            transform: scaleX(0);
+            background:yellow;
+            transition:transform .4s linear;
+
+        }
+
+        .nav ul li a:hover::before{
+            transform-origin: left;
+            transform: scaleX(1);
+
+        }
+
+        .head{
+            display:flex;
+            align-items: center;
+            text-align: center;
+            padding:20px;
+            justify-content: center;
+            background-color: blue;
+            color:rgb(255, 167, 4);
+        }
+
+        .head h1{
+            
+            overflow: hidden;
+            white-space:nowrap;
+            height:100%;
+            width:3ch;
+            animation: ani 6s linear infinite;
+
+        }
+
+        @keyframes ani {
+            0%{
+                width:0ch;
+                color:white;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            50%{
+               /* width:20ch;*/
+                color:red;
+                font-family: fantasy;
+            }
+            60%{
+                color:rgb(37, 220, 20);
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+
+            
+            90%{
+                width:20ch;
+                color:yellow;
+                font-family: inherit;
+            }
+           
+        }
+        @media  screen and (max-width:600px){
+
+            span{
+                display: block;
+            }
+
+            #menu li{
+                display:block;
+            }
+
+            #menu{
+                display:none;
+            }
+            .nav ul li{
+                padding-right: 4px;
+            }
+
+            .nav ul li:hover{
+                
+                border-right:2px solid red;
+             }   
+
+            .head h1{
+                font-size:18px;
+            }
+        }
+
+        .main button{
+            padding: 12px 17px;
+            background:lightcyan;
+            border-radius: 16px ;
+            color:green;
+            border:2px solid green;
+        }
+
+        .main button:hover{
+            color:darkorchid;
+            background:rgb(5, 209, 209);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+
+        <img src="logoweb4.jpeg">
+        <div class="menu-right">
+            <span  onclick="my()">&#x2630</span>
+            <ul id="menu">
+                <li><a href="index.html" id="act">Home</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="Intern.html" >Internship</a></li>
+                <li><a href="resumecss.pdf" download="download">Resume</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="head">
+        <h1>
+            Some mini projects...
+        </h1>
+    </div>
+    <div class="main">
+        <ul>
+            <a href="project1.html"><button>Project1</button></a>
+            
+        </ul>
+        <ul>
+            <a href="project2.html"><button>Project2</button></a>
+        </ul>
+    </div>
+
+    <script>
+        function my(){
+
+            let x = document.getElementById("menu");
+            
+            if(x.style.display == "block"){
+
+                x.style.display="none";
+            }
+            
+            else{
+                x.style.display="block";
+            }
+
+        }
+       
+    </script>
+
+</body>
