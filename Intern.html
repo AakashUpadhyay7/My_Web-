@@ -77,6 +77,20 @@
 
         }
 
+        #dev{
+            display:flex;
+            flex-direction: column;
+            align-items:center;
+            text-align: center;
+            justify-content: center;
+            background-color: purple;
+        }
+        #dev p{
+            font-size: xx-large;
+            color:white;
+        }
+       
+
         @media  screen and (max-width:600px){
 
             span{
@@ -110,12 +124,16 @@
             <span  onclick="my()">&#x2630</span>
             <ul id="menu">
                 <li><a href="index.html" id="act">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="project.html">Projects</a></li>
                 <li><a href="Intern.html" >Internship</a></li>
                 <li><a href="resumecss.pdf" download="download">Resume</a></li>
             </ul>
         </div>
 
+    </div>
+    <div id="dev">
+        <p>This site is under construction...</p>
+       
     </div>
     <script>
         function my(){
