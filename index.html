@@ -96,10 +96,13 @@
             {
                 
                 width:0;
+                background: yellow;
             }
             70%,90%{
                 
-                width:100%
+                width:100%;
+                color: rgb(15, 255, 203);
+                background: lightcoral;
             }
         }
 
@@ -213,9 +216,12 @@
         @keyframes para{
             0%{
                 width: 6ch;
+                color:lawngreen;
             }
             50%{
                 width:47ch;
+                color:rgb(0, 0, 0);
+                font:bolder;
             }
             
         }
@@ -309,7 +315,7 @@
             <span  onclick="my()">&#x2630</span>
             <ul id="menu">
                 <li><a href="index.html" id="act">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="project.html">Projects</a></li>
                 <li><a href="Intern.html" >Internship</a></li>
                 <li><a href="resumecss.pdf" download="download">Resume</a></li>
             </ul>
@@ -333,7 +339,7 @@
             email : <input type="email" placeholder="@"><br>
             <br>
             Mobile:<input type="number" placeholder=""><br><br>
-            <p>Express you idea:</p><textarea placeholder="Only front end no response  will be obtained" rows="8" cols="40"></textarea>
+            <p>Express you idea:</p><textarea placeholder="Only front end , so no response  will be obtained" rows="8" cols="40"></textarea>
             <br>
             <input type="submit" id="sbutt" onclick="dis()">
             
