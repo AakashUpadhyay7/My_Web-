@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Calculator</title>
+    <style>
+
+        *{
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+        
+
+        .nav{
+           background-color: rgb(255, 0, 0);
+           padding:12px;
+        
+        }
+
+        .nav img{
+            float:left;
+           
+            height:75px;
+            margin:0px;
+        }
+
+        .nav span{
+            font-size: larger;
+            cursor: pointer;
+            display:none;
+        }
+        
+
+
+
+        .nav .menu-right{
+            text-align: right;
+        }
+
+        .nav ul{
+            display:inline-block;
+        }
+
+        .nav #menu li{
+            display:inline-block;
+           
+            font-size: larger;
+            padding-right: 9px;
+            padding:9px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .nav ul li a{
+            position:relative;
+            font-weight: bolder;
+            list-style: none;
+            color:white;
+            text-decoration: none;
+        }
+
+        .nav ul li a:hover{
+            color:yellow;
+            
+        }
+
+        .nav ul li a::before{
+            content:"";
+            position:absolute;
+            left:0;
+            bottom:-3px;
+            width:100%;
+            height:3px;
+            background: blue;
+            transform-origin:left;
+            transform: scaleX(0);
+            transition: transform .4s linear;
+        }
+
+        .nav ul li a:hover::before{
+           
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .calc{
+            border:4px solid green;
+            display: flex;
+            width:100%;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            
+        }
+
+        
+
+        .calc #box1{
+            background-color:rgb(251, 255, 0);
+            text-align: center;
+            justify-content: justify;
+            height:auto;
+            width:50%;
+            border:2px solid red;
+            padding:14px 4px;
+
+        }
+
+        
+        
+        .calc #box2{
+            
+            border:2px solid rgb(255, 0, 170);
+            padding:14px 4px;
+            height:auto;
+            width: 50%;
+            display:flex;
+            flex-wrap: wrap;
+            flex-direction:column;
+            text-align: center;
+
+            background-color: rgb(159, 255, 62);
+
+        }
+
+        .calc #box2 label input{
+            font:bolder;
+            padding:7px;
+            background-color:black;
+            color:white;
+            border:2px solid blue;
+            border-radius:27px;
+            
+            
+
+
+        }
+
+
+        .calc #box2 #Savings{
+            width:15ch;
+            overflow: hidden;
+            white-space: nowrap;
+            animation:anie 4s linear infinite;
+            font:bolder;
+            text-decoration:none;
+
+        }
+
+        .calc #box2 #btn{
+            width:25%;
+            padding:4px 24px;
+            display:block;
+            margin:auto;
+            padding-right:50px;
+            background-color: cornflowerblue;
+        }
+
+        .calc #box2 #btn:hover{
+            background-color: crimson;
+        }
+
+        @keyframes anie{
+            0%{
+                width:0ch;
+            }
+
+            100%{
+                width:100%;
+            }
+        }
+
+
+
+        @media screen and (max-width:600px){
+            .nav img{
+                  
+                  height:35px;
+                  margin:0px;
+                }
+
+            .nav .menu-right span{
+                display:block;
+                 }
+
+
+            #menu{
+                display:none;
+            }
+
+            .nav .menu-right #menu li{
+                display:block;
+            }
+
+            .nav .menu-right #menu li:hover{
+                border-right:3px solid yellow;
+            }      
+
+            .calc{
+            border:4px solid green;
+            display: flex;
+            width:100%;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            
+            }
+            
+            .calc #box1{
+            text-align: center;
+            height:auto;
+            width:100%;
+            border:2px solid red;
+            padding:14px 4px;
+
+        }
+           .calc #box2{
+            
+            border:2px solid rgb(255, 0, 170);
+            padding:14px 4px;
+            height:auto;
+            width: 100%;
+            display:flex;
+            flex-wrap: wrap;
+            flex-direction:column;
+            text-align: center;
+
+            background-color: rgb(159, 255, 62);
+
+        }
+
+        .calc #box2 label input{
+            font:bolder;
+            padding:7px;
+            background-color:black;
+            color:white;
+            border:2px solid blue;
+            border-radius:27px;
+            width:auto;
+
+        }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+
+        <img src="logoweb4.jpeg">
+        <div class="menu-right">
+            <span  onclick="my()">&#x2630</span>
+            <ul id="menu">
+                <li><a href="index.html" id="act">Home</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="Intern.html" >Internship</a></li>
+                <li><a href="resumecss.pdf" download="download">Resume</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="calc">
+        <div id="box1">
+            <h1> Find the total amount using discounted and original amount</h1>
+        </div>
+        <div id="box2">
+            <label for="original">
+                Original price: <input type="number" id="original">
+            </label>
+            <br>
+            <label for="discount">
+                Discount price: <input type="number" id="discount" placeholder="%">
+            </label>
+            <br>
+            <a href="#"><button onclick="func()" id="btn">Get  amount</button></a>
+            <br>
+            <label for="total">
+                Total price: <input type="number" id="total" value="00">
+            </label>
+            <br>
+           
+            <p  id="Savings"></p>
+
+        </div>
+        
+    </div>
+    
+
+    <script>
+
+        function my(){
+            let a=document.getElementById('menu');
+            if(a.style.display=="none"){
+                a.style.display="block";
+            }
+            else{
+                a.style.display="none";
+            }
+        }
+
+
+        function func(){
+            let x=document.getElementById('original').value;
+            console.log(x);
+            let y=document.getElementById('discount').value;
+            console.log(y);
+
+            discount=(y/100)*x;
+            total=x-discount;
+            console.log(total);
+
+        document.getElementById('total').value= total;
+        document.getElementById('Savings').innerHTML="You saved "+discount;
+
+
+
+        }
+        
+    </script>
+</body>
