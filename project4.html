@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internships Details</title>
+    <style>
+        *{
+            
+            list-style: none;
+            text-decoration: none;
+            outline: none;
+        }
+
+        .nav{
+            background:#1d4052;
+            color:#fff;
+            padding:23px;
+            outline: none;
+            border:none;
+            
+        }
+
+        .nav img{
+            padding:14px;
+            height:22px;
+            float:left;
+            margin:0px;
+        }
+
+        span{
+            margin:0 20px;
+            font-size:30px;
+            cursor:pointer;
+        
+            display:none;
+            
+        }
+
+        .menu-right{
+            text-align:right;  /*to display right*/
+
+        }
+        .nav ul li{
+            display:inline-block;
+            margin:20px;
+            list-style:none;
+        }
+
+        .nav ul li a{
+            position:relative;
+            color:white;
+            font-size: 18px;
+        }
+        
+        .nav ul li a:hover{
+            color:red;
+        }
+
+        .nav ul li a::before{
+            content:" ";
+            position:absolute;
+            left:0;
+            bottom:-3px;
+            width:100%;
+            height:2.4px;
+            transform-origin: left;
+            margin:none;
+            
+            transform: scaleX(0);
+            background:yellow;
+            transition:transform .4s linear;
+
+        }
+
+        .nav ul li a:hover::before{
+            transform-origin: left;
+            transform: scaleX(1);
+
+        }
+
+    
+       
+
+        @media  screen and (max-width:600px){
+
+            span{
+                display: block;
+            }
+
+            #menu li{
+                display:block;
+            }
+
+            #menu{
+                display:none;
+            }
+            .nav ul li{
+                padding-right: 4px;
+            }
+
+            .nav ul li:hover{
+                
+                border-right:2px solid red;
+             }   
+
+             .project .input-box input{
+              width:50%;
+             padding-top:1150px;
+              
+            font-size:16px;
+            letter-spacing: 1px;
+            border:none;
+            outline: none;
+            border-bottom: 1px solid rgb(250, 250, 103);
+            background: transparent;
+            }
+
+            .project .input-box{
+                padding-top:50px;
+              }
+
+
+
+        
+
+        }
+
+        
+        .project{
+            background:#1d4052;
+            
+         }
+
+
+        .project .input-box{
+            position:relative;
+            text-align: center;
+            border:none;
+
+         }
+        
+        .project .input-box input{
+            text-align: center;
+            width:80%;
+            padding:20px;
+            margin-top:0px;
+            font-size:16px;
+            letter-spacing: 1px;
+            border:none;
+            color:cornsilk;
+            outline: none;
+            border-bottom: 1px solid rgb(250, 250, 103);
+            background: transparent;
+        }
+
+        .project .input-box label{
+            text-align: center;
+            position:absolute;
+            top: 0px;
+            left:0px;
+            letter-spacing: 1px;
+            padding:0px 70px;
+            font-size:16px;
+            color:#fff;
+            transition: 0.5s;
+            font:bolder;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+         }
+
+
+
+        .project .input-box input:focus + label{
+            top:-20px;
+            left:0;
+            color:yellow;
+        }
+
+        .project .input-box input:valid + label{
+
+        top:-20px;
+        left:0;
+        color:rgb(136, 255, 17);
+        
+        }
+
+        .project button{
+            background-color: cyan;
+            display:block;
+            margin:auto;
+            border-radius: 23px;
+            border:none;
+            padding:23px 23px;
+            outline:none;
+
+
+        }
+
+        .project button:hover{
+            background-color: rgb(13, 219, 219);
+        }
+
+        .project button:active{
+            background-color: rgb(3, 3, 3);
+            color:white;
+        }
+
+        .project .out{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: justify;
+            text-align: center;
+            margin:auto;
+        }
+
+        .project p{
+            top: 0ch;
+            position:relative;
+            width:3ch;
+            height:100%;
+            overflow: hidden;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font:bolder;
+            white-space: nowrap;
+            animation:transmit 4s linear infinite;
+        }
+
+        @keyframes transmit {
+            0%{
+                width:100%;
+                color:yellow;
+            }
+
+            50%{
+                color: rgb(245, 123, 148);
+            }
+            100%{
+                color:rgb(255, 242, 188);
+                width:100%;
+            }
+        }
+
+        footer{
+            display: block;
+            margin:auto;
+            text-align: center;
+            padding: 3px 3px;
+            background: chartreuse;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="nav">
+
+        <img src="logoweb4.jpeg">
+        <div class="menu-right">
+            <span  onclick="my()">&#x2630</span>
+            <ul id="menu">
+                <li><a href="index.html" id="act">Home</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="Intern.html" >Internship</a></li>
+                <li><a href="resumecss.pdf" download="download">Resume</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="project">
+        <div class="input-box">
+
+            <input type="text" id="entry" autocomplete="off" required>
+            <label>Please enter your input as per your convenience</label>
+
+        </div>
+        
+        <br>
+        <button type="submit" onclick="view()">Count</button>
+        <div class="out">
+            <p id="Alp"></p>
+            <p id="num"></p>
+            <p id="wh"></p>
+            <p id="vo"></p>
+            <p id="con"></p>
+            <p id="sym"></p>
+
+        </div>
+        
+    </div>
+
+    <footer>
+        It's a simple implementation of javascript along with HTML & CSS
+    </footer>
+   
+    <script>
+        function my(){
+
+            let x = document.getElementById("menu");
+            
+            if(x.style.display == "block"){
+
+                x.style.display="none";
+            }
+            
+            else{
+                x.style.display="block";
+            }
+
+        }
+
+        function view(){
+            let a=document.getElementById('entry').value;
+           
+           let b=a.charAt(2);
+           let v=(/[a-zA-Z]/).test(b);
+           console.log(v);
+         
+         /*  let c=a.length;;
+             console.log(c);*/
+
+           
+
+            let i,z,alphabet=0,vovels=0,constants=0,white=0,numbers=0,others=0;
+            for(i=0 ; i<a.length; i++)
+            {
+                z=a.charAt(i);
+                if((/[a-zA-Z]/).test(z)){
+                    if(z=="A"|| z=="a" || z=="E"|| z=="e" || z=="I"|| z=="i" || z=="O"|| z=="o" || z=="U"|| z=="u" )
+                    {
+                        vovels+=1;
+                     }
+                   else{
+                    constants+=1;
+                    }
+                }
+
+                else if(z==" ")
+                {
+                    white+=1;
+                }
+                 else if(z==1 || z==2|| z==3 || z==4 || z==5|| z==6|| z==7 || z==8 || z==9 || z=="0"){
+                    numbers+=1;
+                }
+                else
+                {
+                    others+=1;
+                }
+            }
+            alphabet=vovels+constants
+            document.getElementById('Alp').innerHTML="Alphabets:"+alphabet;
+            document.getElementById('vo').innerHTML="Vowels : "+vovels;
+            document.getElementById('con').innerHTML="Constants : "+constants;
+            document.getElementById('wh').innerHTML="White spaces: "+white;
+            document.getElementById('num').innerHTML="Numbers : "+numbers;
+            document.getElementById('sym').innerHTML="Other symbols & characters : "+others;
+            
+        }
+    </script>
+</body>
+</html>
